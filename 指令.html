@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+  	<meta charset="UTF-8"/>
+    <script src="js/angular.min.js"></script>
+  </head>
+  <body ng-app="myApp" ng-controller="YiMing">
+姓名: <input type="text" ng-model="name"/> <br/>
+    <first/>
+    <second/>
+<script>
+angular.module('myApp', []).directive('first', [ function(){
+    return {
+        restrict: 'AE', 
+        template: 'first name:{{name}}'
+    };
+}]).directive('second', [ function(){
+    return {
+        restrict: 'AE', 
+        template: 'first name:{{name}}'
+    };
+}]).controller('YiMing', ['$scope', function($scope){
+    $scope.name="YiMing";
+}]);
+</script>
+</body>
+</html>
